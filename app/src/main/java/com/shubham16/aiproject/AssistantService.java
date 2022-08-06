@@ -148,6 +148,7 @@ public class AssistantService extends Service {
     }
 
     private void startListening() {
+        isListening = true;
         if (vibe != null) {
             vibe.vibrate(200);
         }
@@ -209,7 +210,7 @@ public class AssistantService extends Service {
         Toast.makeText(this, "Destroy", Toast.LENGTH_SHORT).show();
     }
 
-    private android.speech.RecognitionListener androidListener = new android.speech.RecognitionListener() {
+    private final android.speech.RecognitionListener androidListener = new android.speech.RecognitionListener() {
         @Override
         public void onReadyForSpeech(Bundle bundle) {
 
